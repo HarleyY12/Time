@@ -20,8 +20,21 @@ public class Time {
             hours = hours + 1;
         }
     }
+    public String addTime(){
+        return "e";
+
+    }
     public String toString(){
-        return hours + ":" + minutes + ":" + seconds;
+        String newFormat = "";
+        if (hours <=9){
+            newFormat = "0"+hours + ":" + minutes + ":" + seconds;
+
+        }if (minutes<=9){
+            newFormat = hours + ":0" + minutes + "seconds:" + seconds;
+        }
+        if (seconds <= 9){
+            newFormat = hours + "::" + minutes + ":0" + seconds;
+        }
+        return newFormat;
         }
     }
-
