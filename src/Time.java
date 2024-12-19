@@ -1,5 +1,4 @@
 public class Time {
-    private String initialTime;
     private int hours;
     private int minutes;
     private int seconds;
@@ -19,22 +18,26 @@ public class Time {
             minutes = 0;
             hours = hours + 1;
         }
+        if (hours == 24){
+            hours = 0;
+        }
     }
-    public String addTime(){
-        return "e";
+    public void addTime(Time other){
+        this.seconds = this.seconds + other.seconds;
+        if (this.seconds >= 60){
+            this.seconds = this.seconds - 60;
+            this.minutes = this.minutes + 1;
+        }
+        if (this.minutes >= 60){
+            this.minutes = this.minutes - 60;
+            this.hours = this.hours + 1;
+        }
+        if (this.hours >= 24){
+            this.hours = this.hours - 24;
+        }
 
     }
     public String toString(){
-        String newFormat = "";
-        if (hours <=9){
-            newFormat = "0"+hours + ":" + minutes + ":" + seconds;
-
-        }if (minutes<=9){
-            newFormat = hours + ":0" + minutes + "seconds:" + seconds;
-        }
-        if (seconds <= 9){
-            newFormat = hours + "::" + minutes + ":0" + seconds;
-        }
-        return newFormat;
-        }
+        return String.format("%02d:,%02d:,%02d",hours,minutes,seconds);
     }
+}
