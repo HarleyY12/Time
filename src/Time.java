@@ -10,7 +10,7 @@ public class Time {
     }
     public void tick(){
         seconds = seconds + 1;
-        if(seconds >= 60){
+        if(seconds == 60){
             seconds = 0;
             minutes = minutes + 1;
         }
@@ -38,6 +38,6 @@ public class Time {
 
     }
     public String toString(){
-        return String.format("%02d:,%02d:,%02d",hours,minutes,seconds);
+        return String.format("%02d:%02d:%02d",hours,minutes,seconds);
     }
 }
