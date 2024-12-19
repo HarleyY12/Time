@@ -37,6 +37,9 @@ public class Main
         System.out.println("Actual result : " + time4);
         System.out.println("Expected result : 18:06:03 ");
         System.out.println("Actual result : " + time1);
+        Time time5 = new Time(0,0,0);
+        time5.add(time2);
+        System.out.println("Expected result : 06:50:35");
+        System.out.println("Actual result " + time5);
     }
 }
-
