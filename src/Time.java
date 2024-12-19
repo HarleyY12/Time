@@ -22,16 +22,18 @@ public class Time {
             hours = 0;
         }
     }
-    public void addTime(Time other){
+    public void add(Time other){
         this.seconds = this.seconds + other.seconds;
         if (this.seconds >= 60){
             this.seconds = this.seconds - 60;
             this.minutes = this.minutes + 1;
         }
+        this.minutes = this.minutes + other.minutes;
         if (this.minutes >= 60){
             this.minutes = this.minutes - 60;
             this.hours = this.hours + 1;
         }
+        this.hours = this.hours + other.hours;
         if (this.hours >= 24){
             this.hours = this.hours - 24;
         }
